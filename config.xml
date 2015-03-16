@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.ryanw.barcodedemo"
         version   = "2.0.0">
-    <name>My Love Ping/name>
+    <name>My Love Ping</name>
 
     <description>
         Send your love messages secretly.. scan the barcode of your gift to your loved one and enter the message,
