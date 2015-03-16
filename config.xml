@@ -3,14 +3,15 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.ryanw.barcodedemo"
         version   = "2.0.0">
-    <name>Scanner Demo</name>
+    <name>My Love Ping/name>
 
     <description>
-        Scans barcodes.
+        Send your love messages secretly.. scan the barcode of your gift to your loved one and enter the message,
+        Tell your love to scan the barcode again to read your message.. just a fun..enjoy.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://phonegap.com" email="abhishekarora1028@gmail.com">
+        Abhishek Arora
     </author>
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
@@ -28,10 +29,10 @@
     <preference name="webviewbounce"    value="false" />
 
     <icon src="icon.png" />
-    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
+    <icon src="res/icon/android/icon-32.png"   gap:platform="android"    gap:density="ldpi" />
+    <icon src="res/icon/android/icon-48.png"   gap:platform="android"    gap:density="mdpi" />
+    <icon src="res/icon/android/icon-64.png"   gap:platform="android"    gap:density="hdpi" />
+    <icon src="res/icon/android/icon-128.png"  gap:platform="android"    gap:density="xhdpi" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
     <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
