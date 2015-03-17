@@ -108,3 +108,10 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+#responsemessage{
+height: 20px;
+width: 100%;
+margin: 20px;
+padding: 5px;
+color: #fff;
+}
