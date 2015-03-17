@@ -58,11 +58,11 @@ var app = {
 
         scanner.scan( function (result) { 
 
-           /* alert("We got a barcode\n" + 
+           alert("We got a barcode\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled); */
-                $('#code').val(result.text);
+            "Cancelled: " + result.cancelled); 
+             /*    $('#code').val(result.text);
                 if(result.text!='')
                 {
                     //check if message exists
@@ -83,7 +83,7 @@ var app = {
 
                     }
                     });
-                }
+                }*/
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
@@ -115,7 +115,7 @@ var app = {
     }
 
 };
-/*
+
 $(document).ready(function(){
     $('#deletemessage').click(function(){
        var code  =  $('#code').val();
