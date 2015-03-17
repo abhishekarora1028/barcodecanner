@@ -23,7 +23,7 @@
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 
-body {
+html,body {
     background-color:#E4E4E4;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -49,7 +49,7 @@ body {
 .app {
     width:225px;                   /* text area width */
     text-align:center;
-    margin:20px auto;  /* offset vertical: half of image height and text area height */
+    margin:50px auto;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
 

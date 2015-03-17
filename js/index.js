@@ -115,7 +115,7 @@ var app = {
     }
 
 };
-
+/*
 $(document).ready(function(){
     $('#deletemessage').click(function(){
        var code  =  $('#code').val();
