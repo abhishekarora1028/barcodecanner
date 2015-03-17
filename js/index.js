@@ -72,7 +72,7 @@ var app = {
                         async: false,
                         type: "GET",
                         success:function(responseData) { 
-                            if(responseData == 'no')
+                            if(responseData == 'notFound')
                             {
                               $('#addmessage').show();
                             }
@@ -130,13 +130,13 @@ $(document).ready(function(){
                                 $('#showmessage').hide();
                                 $('#maindiv').show();
                                 $('#responsemessage').css('background','green');
-                                $('#responsemessage').text('Message deleted successfully.. Send new message'); 
+                                $('#responsemessage').text('Message deleted successfully.. Send new message').show(); 
                                 setTimeout(function(){$('#responsemessage').hide(500)}, 3000);   
                             }
                             else
                             {
                                 $('#responsemessage').css('background','red');
-                                $('#responsemessage').text('Error in deleting message');  
+                                $('#responsemessage').text('Error in deleting message').show(); 
                                 setTimeout(function(){$('#responsemessage').hide(500)}, 3000); 
                             }
 
@@ -148,24 +148,23 @@ $(document).ready(function(){
         var code  =  $('#code').val();
         var message  =  $('#message').val();
         $.ajax({
-                        dataType: "json",
                         url: "http://www.aroracomfortechs.com/projects/myloveping/savemessage.php",
                         async: false,
                         type: "POST",
-                        data:{'code':code,'message':message}
+                        data:{'code':code,'message':message},
                         success:function(responseData) { 
-                            if(responseData == 'added')
+                            if(responseData == 'success')
                             {
                                 $('#addmessage').hide();
                                 $('#maindiv').show();
                                 $('#responsemessage').css('background','green');
-                                $('#responsemessage').text('Message added successfully.. Send new message'); 
+                                $('#responsemessage').text('Message added successfully.. Send new message').show(); 
                                 setTimeout(function(){$('#responsemessage').hide(500)}, 3000);   
                             }
                             else
                              {
                                 $('#responsemessage').css('background','red');
-                                $('#responsemessage').text('Error in saving message..Please try again');  
+                                $('#responsemessage').text('Error in saving message..Please try again').show();   
                                 setTimeout(function(){$('#responsemessage').hide(500)}, 3000);
                              }
 

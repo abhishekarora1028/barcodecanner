@@ -110,8 +110,12 @@ h1 {
 }
 #responsemessage{
 height: 20px;
-width: 100%;
-margin: 20px;
-padding: 5px;
+width: 70%;
+margin: 20px auto;
+padding: 10px;
 color: #fff;
+font-size: 14px;
+text-transform: none;
+border-radius: 5px;
+text-align: center;
 }
