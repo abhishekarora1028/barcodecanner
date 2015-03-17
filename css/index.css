@@ -49,7 +49,7 @@ body {
 .app {
     width:225px;                   /* text area width */
     text-align:center;
-    margin:0 auto;  /* offset vertical: half of image height and text area height */
+    margin:20px auto;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
 
@@ -57,7 +57,7 @@ body {
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         text-align:center;
-         margin:0 auto;  /* offset vertical: half of image height and text area height */
+         margin:20px auto;  /* offset vertical: half of image height and text area height */
     }
 }
 
