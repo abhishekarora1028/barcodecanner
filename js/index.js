@@ -72,7 +72,13 @@ var app = {
                         type: "GET",
                         data:{"code":result.text},
                         success: function (data) {
-                          alert("success"+data);
+                            if (data=='notFound') {
+                                  $('#addmessage').show();
+                                  $('#maindiv').hide();
+                            } else{
+                                  $('#showmessage').text(data).show();
+                                  $('#maindiv').hide();
+                            }
                         },
                         error: function () {
                              alert("error");
@@ -84,8 +90,6 @@ var app = {
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
-            document.getElementById("info").innerHTML = result.text;
-            $('#addmessage').show();
             console.log(result);
             /*
             if (args.format == "QR_CODE") {
