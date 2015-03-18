@@ -67,18 +67,16 @@ var app = {
                 {
                     //check if message exists
                     $.ajax({
-                        dataType: "json",
-                        url: "http://www.aroracomfortechs.com/projects/myloveping/getmessage.php?code="+result.text,
+                        url: "http://www.aroracomfortechs.com/projects/myloveping/getmessage.php",
                         async: false,
                         type: "GET",
-                        }).done(function(data) {
-                        alert(data);
-                        if(data === 'notFound') {
-                            alert('hi');
-                             $('#addmessage').show();
-                        } else {
-                            $('#showmessage').text(data).show();   
-                         }
+                        data:{"code":result.text},
+                        success: function (data) {
+                          alert("success"+data);
+                        },
+                        error: function () {
+                             alert("error");
+                        }
                     });
                 }
 
