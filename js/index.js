@@ -62,28 +62,6 @@ var app = {
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled); 
-             /*    $('#code').val(result.text);
-                if(result.text!='')
-                {
-                    //check if message exists
-                    $.ajax({
-                        dataType: "json",
-                        url: "http://www.aroracomfortechs.com/projects/myloveping/getmessage.php?code="+result.text,
-                        async: false,
-                        type: "GET",
-                        success:function(responseData) { 
-                            if(responseData == 'notFound')
-                            {
-                              $('#addmessage').show();
-                            }
-                            else
-                             {
-                                $('#showmessage').text(responseData).show();   
-                             }
-
-                    }
-                    });
-                }*/
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
@@ -115,60 +93,3 @@ var app = {
     }
 
 };
-
-$(document).ready(function(){
-    $('#deletemessage').click(function(){
-       var code  =  $('#code').val();
-        $.ajax({
-                        dataType: "json",
-                        url: "http://www.aroracomfortechs.com/projects/myloveping/deletemessage.php?code="+code ,
-                        async: false,
-                        type: "GET",
-                        success:function(responseData) { 
-                            if(responseData == 'deleted')
-                            {
-                                $('#showmessage').hide();
-                                $('#maindiv').show();
-                                $('#responsemessage').css('background','green');
-                                $('#responsemessage').text('Message deleted successfully.. Send new message').show(); 
-                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000);   
-                            }
-                            else
-                            {
-                                $('#responsemessage').css('background','red');
-                                $('#responsemessage').text('Error in deleting message').show(); 
-                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000); 
-                            }
-
-                    }
-                    });
-
-    });
-    $('#submitmessage').click(function(){
-        var code  =  $('#code').val();
-        var message  =  $('#message').val();
-        $.ajax({
-                        url: "http://www.aroracomfortechs.com/projects/myloveping/savemessage.php",
-                        async: false,
-                        type: "POST",
-                        data:{'code':code,'message':message},
-                        success:function(responseData) { 
-                            if(responseData == 'success')
-                            {
-                                $('#addmessage').hide();
-                                $('#maindiv').show();
-                                $('#responsemessage').css('background','green');
-                                $('#responsemessage').text('Message added successfully.. Send new message').show(); 
-                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000);   
-                            }
-                            else
-                             {
-                                $('#responsemessage').css('background','red');
-                                $('#responsemessage').text('Error in saving message..Please try again').show();   
-                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000);
-                             }
-
-                    }
-                    });
-    });
-});
