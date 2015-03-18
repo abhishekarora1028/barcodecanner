@@ -71,19 +71,14 @@ var app = {
                         url: "http://www.aroracomfortechs.com/projects/myloveping/getmessage.php?code="+result.text,
                         async: false,
                         type: "GET",
-                        success:function(responseData) { 
-                            alert(responseData);
-                            if(responseData == 'notFound')
-                            {
+                        }).done(function(data) {
+                        alert(data);
+                        if(data === 'notFound') {
                             alert('hi');
-                              $('#addmessage').show();
-                            }
-                            else
-                             {
-                                $('#showmessage').text(responseData).show();   
-                             }
-
-                    }
+                             $('#addmessage').show();
+                        } else {
+                            $('#showmessage').text(data).show();   
+                         }
                     });
                 }
 
@@ -92,6 +87,7 @@ var app = {
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
+            $('#addmessage').show();
             console.log(result);
             /*
             if (args.format == "QR_CODE") {
