@@ -8,7 +8,7 @@
         <title>My Love Ping</title>
     </head>
     <body>
-        <<div id="responsemessage" style="display:none"></div>
+        <div id="responsemessage" style="display:none"></div>
         <input type="hidden" id="code" value=""/>
         <div class="app" id="maindiv">
             <h1>My Love Ping</h1>
@@ -28,6 +28,62 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+    $(document).ready(function(){
+    $('#deletemessage').click(function(){
+       var code  =  $('#code').val();
+        $.ajax({
+                        dataType: "json",
+                        url: "http://www.aroracomfortechs.com/projects/myloveping/deletemessage.php?code="+code ,
+                        async: false,
+                        type: "GET",
+                        success:function(responseData) { 
+                            if(responseData == 'deleted')
+                            {
+                                $('#showmessage').hide();
+                                $('#maindiv').show();
+                                $('#responsemessage').css('background','green');
+                                $('#responsemessage').text('Message deleted successfully.. Send new message').show(); 
+                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000);   
+                            }
+                            else
+                            {
+                                $('#responsemessage').css('background','red');
+                                $('#responsemessage').text('Error in deleting message').show(); 
+                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000); 
+                            }
+
+                    }
+                    });
+
+    });
+    $('#submitmessage').click(function(){
+        var code  =  $('#code').val();
+        var message  =  $('#message').val();
+        $.ajax({
+                        url: "http://www.aroracomfortechs.com/projects/myloveping/savemessage.php",
+                        async: false,
+                        type: "POST",
+                        data:{'code':code,'message':message},
+                        success:function(responseData) { 
+                            if(responseData == 'success')
+                            {
+                                $('#addmessage').hide();
+                                $('#maindiv').show();
+                                $('#responsemessage').css('background','green');
+                                $('#responsemessage').text('Message added successfully.. Send new message').show(); 
+                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000);   
+                            }
+                            else
+                             {
+                                $('#responsemessage').css('background','red');
+                                $('#responsemessage').text('Error in saving message..Please try again').show();   
+                                setTimeout(function(){$('#responsemessage').hide(500)}, 3000);
+                             }
+
+                    }
+                    });
+    });
+});
         </script>
     </body>
 </html>
