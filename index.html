@@ -33,10 +33,10 @@
     $('#deletemessage').click(function(){
        var code  =  $('#code').val();
         $.ajax({
-                        dataType: "json",
-                        url: "http://www.aroracomfortechs.com/projects/myloveping/deletemessage.php?code="+code ,
+                        url: "http://www.aroracomfortechs.com/projects/myloveping/deletemessage.php",
                         async: false,
                         type: "GET",
+                        data:{'code':code},
                         success:function(responseData) { 
                             if(responseData == 'deleted')
                             {
