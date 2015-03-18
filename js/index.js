@@ -76,7 +76,8 @@ var app = {
                                   $('#addmessage').show();
                                   $('#maindiv').hide();
                             } else{
-                                  $('#showmessage').text(data).show();
+                                  $('#showmessage').show();
+                                  $('#messagedata').text(data)
                                   $('#maindiv').hide();
                             }
                         },
