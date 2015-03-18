@@ -72,8 +72,10 @@ var app = {
                         async: false,
                         type: "GET",
                         success:function(responseData) { 
+                            alert(responseData);
                             if(responseData == 'notFound')
                             {
+                            alert('hi');
                               $('#addmessage').show();
                             }
                             else
